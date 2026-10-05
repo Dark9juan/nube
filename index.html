@@ -1,35 +1,71 @@
-html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Monitor Cloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a mi página</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f9; padding: 50px; }
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; }
-        h1 { color: #333; }
-        #precio { font-size: 24px; color: #2ecc71; font-weight: bold; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            color: #1e293b;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0284c7;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Precio del Bitcoin en la Nube</h1>
-        <p>Este dato se obtiene consultando una API externa en tiempo real:</p>
-        <div id="precio">Cargando...</div>
+
+    <div class="container">
+        <span class="badge">Tareita</span>
+        <h1>Bienvenido a mi página</h1>
+        <p>Esta bien perruchis, ¿Apoco no?.</p>
     </div>
 
-    <script>
-        // Consultamos una API pública en la nube (CoinGecko)
-        fetch('https://coingecko.com')
-            .then(response => response.json())
-            .then(data => {
-                const usdPrice = data.bitcoin.usd;
-                document.getElementById('precio').innerText = $${usdPrice.toLocaleString()} USD;
-            })
-            .catch(error => {
-                document.getElementById('precio').innerText = "Error al conectar con la API";
-                console.error(error);
-            });
-    </script>
 </body>
 </html>
